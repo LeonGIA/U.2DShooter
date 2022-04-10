@@ -175,20 +175,22 @@ namespace Player
 
 		private void Turn()
 		{
-			// Vector3 scale = transform.localScale;
-			// scale.x *= -1;
-			// transform.localScale = scale;
+			// Negative scale implementation of turning
+			Vector3 scale = transform.localScale;
+			scale.x *= -1;
+			transform.localScale = scale;
 
 			isFacingRight = !isFacingRight;
 
-			if(isFacingRight)
-			{
-				transform.rotation = Quaternion.Euler(transform.rotation.x, 0f, transform.rotation.z);
-			}
-			else
-			{
-				transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
-			}
+			// Euler Angle implementation of turning
+			// if(isFacingRight)
+			// {
+			// 	transform.rotation = Quaternion.Euler(transform.rotation.x, 0f, transform.rotation.z);
+			// }
+			// else
+			// {
+			// 	transform.rotation = Quaternion.Euler(transform.rotation.x, 180f, transform.rotation.z);
+			// }
 		}
 		
 		private void setGravityScale(float scale)
